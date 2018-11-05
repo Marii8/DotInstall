@@ -1,9 +1,6 @@
 (function() {
     'use strict';
 
-//         if (this.classList.contains('disabled')=== true){
-//             return;
-//         }
 
 
     let price = document.getElementById('price');
@@ -34,6 +31,9 @@
 
 
     btn.addEventListener('click', function(){
+        if (this.classList.contains('disabled')=== true){
+            return;
+        }
         let payLess;
         let short;
         let payMore;
