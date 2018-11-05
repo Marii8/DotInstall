@@ -22,7 +22,12 @@ function updateTimer(t) {
     s = ('0' + s).slice(-2);
     ms = ('00' + ms).slice(-3);
 
-    timer.textContent = m +':'+ s +'.' + ms;
+        // console.log(m);
+        // console.log(s);
+        // console.log(ms);
+    timer.text(m +':'+ s +'.' + ms);
+        //jQueryで書くときは、要素内のテキストはtext()メソッドでsetする
+        // console.log(timer.textContent);
 }
 
 
