@@ -19,15 +19,16 @@
 // // ^と$で囲う。
 // // /^[1-9][0-9]*$/
 
-//     function checkInput(){
-//         if (
-//             price.value.match(/^[1-9][0-9]*$/) !== null &&
-//             num.value.match(/^[1-9][0-9]*$/) !== null
-//         ){
-//         btn.classList.remove('disabled');
-//     } else {
-//         btn.classList.add('disabled');
-//     }
+    function checkInput(){
+        if (
+            price.value.match(/^[1-9][0-9]*$/) !== null &&
+            num.value.match(/^[1-9][0-9]*$/) !== null
+        ){
+            btn.classList.remove('disabled');
+    } else {
+        btn.classList.add('disabled');
+    }
+}
 
     price.addEventListener('keyup', checkInput);
     num.addEventListener('keyup', checkInput);
