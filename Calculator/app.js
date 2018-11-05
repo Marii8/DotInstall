@@ -29,6 +29,8 @@
 //         btn.classList.add('disabled');
 //     }
 
+    price.addEventListener('keyup', checkInput);
+    num.addEventListener('keyup', checkInput);
 
     btn.addEventListener('click', function(){
         if (this.classList.contains('disabled')=== true){
@@ -52,8 +54,5 @@
         }
             result.textContent = str;
     })
-
-//     price.addEventListener('keyup', checkInput);
-//     num.addEventListener('keyup', checkInput);
 
 }) ();
