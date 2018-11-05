@@ -10,6 +10,8 @@
     let startTime;
     let timeLeft;
     let timeToCountDown = 4 * 1000; //単位を合わせておく
+    let timerId; //残り時間が0になった時にリセットするため、contDown()メソッドの返り値を入れるための変数を用意。
+
 
 function updateTimer(t) {
     let d = new Date(t);
@@ -35,12 +37,17 @@ function updateTimer(t) {
 
 //setTimeoutを使って、一定時間後に()内の処理を行う。10ミリ秒後に繰り返す
 function countDown(){
-    setTimeout(function(){
+    timerId = setTimeout(function(){
         timeLeft = timeToCountDown - (Date.now() - startTime);
+        if (timeLeft < 0 ) {
+            clearTimeout(timerId);
+            timeLeft = 0;
+            updateTimer(timeLeft);
+            return;
+        }
         // console.log(timeLeft);
         updateTimer(timeLeft);
         countDown(); //countDownを再帰的に呼び出す
-
     }, 10);
     //指定したミリ秒後に、カウントダウンする時間からstartTimeから10ミリ秒ごとの差を出していく
 }
