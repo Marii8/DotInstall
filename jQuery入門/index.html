@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryの練習</title>
+</head>
+<body>
+   <p>jQueryの練習</p>
+   <ul id="main">
+       <li>0</li>
+       <li class="item">1</li>
+       <li class="item">2</li>
+       <li>
+           3
+           <ul id="sub">
+               <li>3-0</li>
+               <li>3-1</li>
+               <li class="item">3-2</li>
+               <li class="item">3-3</li>
+               <li>3-4</li>
+           </ul>
+       </li>
+   </ul>
+   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+   <script>
+       $(function(){
+            // $('#sub').css('color', 'red');
+        //#mainの直下の<li>を指定したいとき不等号を使う
+            // $('#main > .item').css('color', 'red');
+        //孫要素まで適応させたいときは空白を使う
+            // $('#main .item').css('color', 'red');
+        //複数を指定したいときは、
+            // $('p, .item').css('color', 'red');
+        //隣接するもの: 隣接セレクタ
+            $('.item + .item').css('color', 'red');
+
+
+       });
+   </script>
+</body>
+</html>
