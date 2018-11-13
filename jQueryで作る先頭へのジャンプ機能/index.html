@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>スクロール実験</title>
+</head>
+<body style="text-align: center;">
+    <h1>スクロール実験</h1>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <div id="back-to-top" style="position: fixed; right: 5px; bottom: 5px"><a href="#">↑</a></div>
+    <div id="pos" style="position: fixed; left: 5px; bottom: 5px"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(function() {
+        //#back-to-topを消す
+        $('#back-to-top').hide();
+
+        //スクロールが十分されたらback-to-topを表示、スクロールが戻ったら非表示
+        $(window).on('scroll',function() {
+                console.log('ok');
+            $('#pos').text($(this).scrollTop()); //確認
+            if ($(this).scrollTop() > 60) {
+                 $('#back-to-top').fadeIn();
+            } else {
+                 $('#back-to-top').fadeOut();
+            }
+        });
+        //#back-to-topがクリックされたら上に戻る
+        $('#back-to-top a').on('mouseover', function() {
+            $('body').animate({
+                scrollTop: 0,
+            }, 500);
+            return false;
+        });
+
+    });
+    </script>
+</body>
+</html>
