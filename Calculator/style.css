@@ -72,6 +72,10 @@ body {
     right: 10px;
 }
 
+#reset.hidden {
+    display: none;
+}
+
 #btn.disabled {
     opacity: .6;
 }

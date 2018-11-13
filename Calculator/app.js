@@ -11,23 +11,16 @@
     let reset = document.getElementById('reset');
     let str;
 
-// // input要素のに数値が入っているか確認して、その場合に計算ボタンを有効化する処理
-// // 一桁目には1から9のどれか、
-// // 二桁目以降があるなら、0から9のどれかが入っているか、、というパターンでチェックする。
-
-// // 入力された数値の先頭から末尾までの値を見たい場合、
-// // ^と$で囲う。
-// // /^[1-9][0-9]*$/
-
-//     function checkInput(){
-//         if (
-//             price.value.match(/^[1-9][0-9]*$/) !== null &&
-//             num.value.match(/^[1-9][0-9]*$/) !== null
-//         ){
-//         btn.classList.remove('disabled');
-//     } else {
-//         btn.classList.add('disabled');
-//     }
+    function checkInput(){
+        if (
+            price.value.match(/^[1-9][0-9]*$/) !== null &&
+            num.value.match(/^[1-9][0-9]*$/) !== null
+        ){
+            btn.classList.remove('disabled');
+    } else {
+        btn.classList.add('disabled');
+    }
+}
 
     price.addEventListener('keyup', checkInput);
     num.addEventListener('keyup', checkInput);
@@ -53,6 +46,21 @@
                 '一人' + payMore + '円だと' + over + '円余ります。';
         }
             result.textContent = str;
+
+        // #resetのhiddenクラスが外れるのは、#btnをクリックした時なので、function内に記述
+        reset.classList.remove('hidden');
+
+
+        //resetをクリックした時の処理
+        reset.addEventListener('click', function(){
+            result.textContent = 'ここに結果を表示します';
+            price.value = '';
+            num.value = '';
+            unit.value = 100;
+            this.classList.add('hidden'); //また消す
+            price.focus(); //すぐに入力できるようにする
+        })
     })
+        price.focus();
 
 }) ();
